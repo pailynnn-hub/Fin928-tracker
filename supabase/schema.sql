@@ -30,6 +30,9 @@ create table daily_activities (
   fyp_amount numeric(12,2) default 0,
   fyc_amount numeric(12,2) default 0,       -- ยอด FYC
   life_count int default 0,                 -- จำนวนราย (Life)
+  after_sales_visits int default 0,         -- เยี่ยมลูกค้าหลังขาย/เคลมประกัน
+  crm_activities int default 0,             -- ทำ CRM เพื่อบริการเหนือกว่า
+  referral_requests int default 0,          -- ขอต่อรายชื่อ (Referral)
   note text,
   created_at timestamp with time zone default now(),
   unique (agent_id, activity_date)
@@ -53,6 +56,9 @@ create table goals (
   target_fyp_amount numeric(12,2) default 0,
   target_fyc_amount numeric(12,2) default 0,
   target_life_count int default 0,
+  target_after_sales_visits int default 0,
+  target_crm_activities int default 0,
+  target_referral_requests int default 0,
   created_at timestamp with time zone default now()
 );
 
